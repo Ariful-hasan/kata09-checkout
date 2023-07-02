@@ -17,6 +17,7 @@ $checkout = new CheckoutController($rules);
 $checkout->scan('A');
 $checkout->scan('B');
 $checkout->scan('A');
+$checkout->scan('A');
+$checkout->scan('B');
 $totalPrice = $checkout->total();
-
 var_dump($totalPrice);
