@@ -8,7 +8,7 @@ use Src\Exceptions\RulesNotFountException;
 class CheckoutController extends BaseController
 {
     private array $items;
-    
+
     /**
      * set the rules
      *
@@ -19,7 +19,7 @@ class CheckoutController extends BaseController
     {
         $this->items = [];
     }
-    
+
     /**
      * scan items and store
      *
@@ -33,13 +33,13 @@ class CheckoutController extends BaseController
         }
         $this->items[$item] += 1;
     }
-    
+
     /**
      * calculate total amount of the cart.
      *
      * @return integer total price
      */
-    public function total(): int 
+    public function total(): int
     {
         if (empty($this->items)) {
             return 0;
@@ -55,7 +55,7 @@ class CheckoutController extends BaseController
 
         return $total;
     }
-    
+
     /**
      * find the rules exist or not and return the price
      *
@@ -63,7 +63,7 @@ class CheckoutController extends BaseController
      * @param  int $quantity
      * @return int price
      */
-    function getItemTotalPrice(string $item, int $quantity) : int
+    public function getItemTotalPrice(string $item, int $quantity): int
     {
         $policy = $this->itemRule($item);
 
@@ -74,7 +74,7 @@ class CheckoutController extends BaseController
         }
     }
 
-    function itemRule(string $item) : ?PolicyContract 
+    public function itemRule(string $item): ?PolicyContract
     {
         return $this->rules[$item] ?? null;
     }

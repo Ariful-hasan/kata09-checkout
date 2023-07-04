@@ -2,7 +2,7 @@
 
 namespace Src\Contracts;
 
-interface PolicyContract 
+interface PolicyContract
 {
     public function getPrice(int $quantity): float;
 }
