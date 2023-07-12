@@ -5,7 +5,7 @@ namespace Src\Controllers;
 use Src\Contracts\PolicyContract;
 use Src\Exceptions\RulesNotFountException;
 
-class CheckoutController extends BaseController
+class CheckoutController extends Controller
 {
     private array $items;
 
