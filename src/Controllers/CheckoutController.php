@@ -7,7 +7,7 @@ use Src\Exceptions\RulesNotFountException;
 
 class CheckoutController extends Controller
 {
-    private array $items;
+    public array $items;
 
     /**
      * set the rules

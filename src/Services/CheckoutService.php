@@ -26,15 +26,15 @@ class CheckoutService extends Service
     {
         $policy = $this->itemRule($item);
 
-        if ($policy !== null && $policy instanceof PolicyContract) {
-            return (int)$policy->getPrice($quantity);
-        } else {
-            throw new RulesNotFountException('Rule is not Found for this item');
-        }
+        return (int)$policy->getPrice($quantity);
     }
 
     public function itemRule(string $item): ?PolicyContract
     {
+        if ($this->rules[$item] && !$this->rules[$item] instanceof PolicyContract) {
+            throw new RulesNotFountException('Rule is not Found for this item');
+        }
+
         return $this->rules[$item] ?? null;
     }
 

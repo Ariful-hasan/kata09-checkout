@@ -27,6 +27,6 @@ class DiscountService implements DiscountContract
     {
         return $totalQuantity < $this->discountQuantity
             ? 0
-            : ($totalQuantity / $this->discountQuantity) * $this->discountPrice;
+            : number_format(($totalQuantity / $this->discountQuantity) * $this->discountPrice, 2);
     }
 }
