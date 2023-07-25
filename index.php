@@ -7,7 +7,11 @@ use Src\Services\PricePolicyService;
 require_once __DIR__ . '/src/bootstrap.php';
 
 $rules = [
+<<<<<<< Updated upstream
     'A' => new PricePolicyService(50, new DiscountService(20, 3)),
+=======
+    'A' => new PricePolicyService(25, new DiscountService(10, 2)),
+>>>>>>> Stashed changes
     'B' => new PricePolicyService(30, new DiscountService(15, 2)),
     'C' => new PricePolicyService(20, null),
     'D' => new PricePolicyService(15, null),
