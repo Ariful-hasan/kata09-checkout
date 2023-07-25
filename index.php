@@ -8,7 +8,11 @@ require_once __DIR__ . '/src/bootstrap.php';
 
 $rules = [
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     'A' => new PricePolicyService(50, new DiscountService(20, 3)),
+=======
+    'A' => new PricePolicyService(25, new DiscountService(10, 2)),
+>>>>>>> Stashed changes
 =======
     'A' => new PricePolicyService(25, new DiscountService(10, 2)),
 >>>>>>> Stashed changes
